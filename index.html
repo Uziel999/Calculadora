@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            color: #FFF;
+            background-color: #111;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: red;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+        
+        p {
+            color: #000;
+        }
+        
+        .fundo {
+            text-align: center;
+            background-color: red;
+        }
+        
+        button {
+            cursor: pointer;
+            width: 40px;
+            height: 50px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+        }
+        
+        #res {
+            width: 180px;
+            height: 50px;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: 4px;
+            margin-right: 3px;
+            text-align: center;
+            background-color: #FFF;
+        }
+    </style>
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="container">
+            <h1>Calculadora</h1>
+            <p id="res"></p>
+            <table>
+                <tr>
+                    <td><button onclick="clean()">C</button></td>
+                    <td><button onclick="insert('')"><</button>
+                    </td>
+                    <td><button onclick="insert('/')">/</button></td>
+                    <td><button onclick="insert('*')">X</button></td>
+                </tr>
+                <tr>
+
+                    <td><button onclick="insert('7')">7</button></td>
+                    <td><button onclick="insert('8')">8</button></td>
+                    <td><button onclick="insert('9')">9</button></td>
+                    <td><button onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert('4')">4</button></td>
+                    <td><button onclick="insert('5')">5</button></td>
+                    <td><button onclick="insert('6')">6</button></td>
+                    <td><button onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert('1')">1</button></td>
+                    <td><button onclick="insert('2')">2</button></td>
+                    <td><button onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button style="height: 106px;">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button style="width: 90px;">0</button></td>
+                    <td><button>.</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function insert(num) {
+            var numeros = document.getElementById('res').innerHTML
+            document.getElementById('res').innerHTML = numeros + num
+
+        }
+
+        function clean() {
+            document.getElementById('res').innerHTML = '';
+        }
+
+
+
+
+
+
+        function somar() {
+            var tn1 = document.querySelector('input#txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.getElementById('resposta1')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            resposta1.innerHTML = `Resultado:${n1} + ${n2} = <strong>${s}</strong>`
+
+        }
+
+        function subtracao() {
+            var s1 = document.querySelector('input#sub1')
+            var s2 = document.querySelector('input#sub2')
+            var rest = document.querySelector('resposta2')
+            var n1 = Number(s1.value)
+            var n2 = Number(s2.value)
+            var sub = n1 - n2
+            resposta2.innerHTML = `Resultado: ${n1} e ${n2} = <strong>${sub}</strong>`
+        }
+
+        function multiplicar() {
+            var m1 = document.querySelector('input#mult1')
+            var m2 = document.querySelector('input#mult2')
+            var resp = document.querySelector('resposta3')
+            var n1 = Number(m1.value)
+            var n2 = Number(m2.value)
+            var m = n1 * n2
+            resposta3.innerHTML = `Resultado: ${n1} X ${n2} = <strong>${m}</strong>`
+        }
+
+        function divisao() {
+            var d1 = document.querySelector('input#di1')
+            var d2 = document.querySelector('input#di2')
+            var re = document.querySelector('resposta4')
+            var n1 = Number(d1.value)
+            var n2 = Number(d2.value)
+            var d = n1 / n2
+            resposta4.innerHTML = `Resultado: ${n1} / ${n2} = <strong>${d}</strong>`
+        }
+
+        function potencia() {
+            var p1 = document.querySelector('input#po1')
+            var p2 = document.querySelector('input#po2')
+            var r = document.querySelector('resposta5')
+            var n1 = Number(p1.value)
+            var n2 = Number(p2.value)
+            var p = n1 ** n2
+            resposta5.innerHTML = `Resultado: ${n1} ^ ${n2} = <strong>${p}</strong>`
+        }
+    </script>
+
+</body>
+
+</html>
+</script>
+
+
+</body>
+
+</html>
